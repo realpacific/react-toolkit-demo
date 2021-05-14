@@ -12,10 +12,14 @@ export const randomAsyncThunk = createAsyncThunk(
     'random/fetchRandom',
     async (range) => {
         return await new Promise((resolve, reject) => {
-            setTimeout(() => resolve(Math.floor(Math.random() * range)), 500)
+            setTimeout(() => random(range), 500)
         })
     }
 );
+
+function random(range) {
+    return Math.floor(Math.random() * range);
+}
 
 const randomSlice = createSlice({
     name: 'random',
@@ -23,7 +27,7 @@ const randomSlice = createSlice({
     reducers: {
         next: (state) => {
             state.oldValue = state.value;
-            state.value = Math.floor(Math.random() * state.range);
+            state.value = random(state.range);
         },
         previous: (state) => {
             state.value = state.oldValue;
@@ -33,7 +37,7 @@ const randomSlice = createSlice({
             state.range += 100
         },
         decRange: (state) => {
-            if(state.range <= 100) {
+            if (state.range <= 100) {
                 return;
             }
             state.range -= 100
