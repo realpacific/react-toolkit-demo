@@ -33,6 +33,9 @@ const randomSlice = createSlice({
             state.range += 100
         },
         decRange: (state) => {
+            if(state.range <= 100) {
+                return;
+            }
             state.range -= 100
         }
     },

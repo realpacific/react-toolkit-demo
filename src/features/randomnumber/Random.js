@@ -19,11 +19,11 @@ export default function Random() {
                 <span className="margin-vertical"></span>
                 {select.oldValue != null && <button className="button" onClick={() => dispatch(previous())}>Previous</button>}
                 <span className="margin-vertical"></span>
-                <button className="button" onClick={() => dispatch(randomAsyncThunk())}>Async</button>
+                <button className="button" onClick={() => dispatch(randomAsyncThunk(select.range))}>Async</button>
             </div>
 
             <div className="margin-top d-flex-h">
-                <button className="button" onClick={() => dispatch(decRange())}>-100</button>
+                {select.range > 100 && <button className="button" onClick={() => dispatch(decRange())}>-100</button>}
                 <span className="margin-horizontal" />
                 <span className="value">{select.range}</span>
                 <span className="margin-horizontal" />
