@@ -1,0 +1,40 @@
+
+.value {
+    font-size: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 2px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+
+.label {
+    font-size: 13px;
+    font-weight: bolder;
+    margin-top: 2px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .margin-top {
+    margin-top: 10px;
+  }
+
+  .d-flex-v {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .d-flex-h {
+    display: flex;
+  }
+
+  .margin-horizontal {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+  .margin-vertical {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
